@@ -1,0 +1,36 @@
+{
+  "name": "next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "@radix-ui/react-accordion": "^1.1.1",
+    "@sanity/image-url": "^1.0.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "daisyui": "^2.51.4",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "formik": "^2.2.9",
+    "framer-motion": "^10.5.0",
+    "next": "13.2.4",
+    "next-sanity": "^4.1.5",
+    "next-sanity-client": "^1.0.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-social-icons": "^5.15.0",
+    "theme-change": "^2.5.0",
+    "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  }
+}
