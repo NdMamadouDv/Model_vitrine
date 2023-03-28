@@ -65,9 +65,10 @@ const AccordionTrigger = React.forwardRef(
         <IoChevronDownCircleOutline className="AccordionChevron" aria-hidden />
       </Accordion.Trigger>
     </Accordion.Header>
-  )
+  ),
+  (AccordionContent.displayName = "AccordionContent")
 );
-// AccordionContent.displayName = "AccordionContent";
+//
 
 const AccordionContent = React.forwardRef(
   ({ children, className, ...props }, forwardedRef) => (
@@ -78,6 +79,7 @@ const AccordionContent = React.forwardRef(
     >
       <div className="AccordionContentText">{children}</div>
     </Accordion.Content>
-  )
+  ),
+  (AccordionTrigger.displayName = "AccordionTrigger")
 );
-// AccordionTrigger.displayName = "AccordionTrigger";
+// ;
