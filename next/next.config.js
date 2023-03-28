@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+// webpack-disable-next-line import/no-webpack-loader-syntax
+const nextTranslate = require("next-translate-plugin");
+
 const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
@@ -22,4 +25,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = nextTranslate(nextConfig);

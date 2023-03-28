@@ -6,13 +6,18 @@ import { RiComputerLine } from "react-icons/ri";
 import { BsPencil } from "react-icons/bs";
 import { SlSpeedometer } from "react-icons/sl";
 import { TbPigMoney } from "react-icons/tb";
+import { getSection1Data } from "@/lib/fetchSection1";
+import useTranslation from "next-translate/useTranslation";
 
-export default function Section({ Section1Data }) {
+export default async function Section() {
+  const Section1Data = await getSection1Data();
+  const { t, lang } = useTranslation("home");
+
   // console.log(Section1Data);
   return (
     <section className="layout ">
       <div className="container  py-10 mx-auto ">
-        <h2 className="h2 ">{Section1Data.h2}</h2>
+        <h2 className="h2 ">{t("serviceH2")}</h2>
 
         <div className="mt-2">
           <span className="inline-block w-40 h-1 bg-primary rounded-full"></span>
@@ -28,14 +33,10 @@ export default function Section({ Section1Data }) {
               </span>
 
               <h3 className="text-xl font-semibold text-gray-700  ">
-                Des sites internet optimisés pour la recherche google.
+                {t("feature1Title")}
               </h3>
 
-              <p className="">
-                Être visible par le monde entier est un argument implaccable
-                quand il s&apos;agit d&apos;augmenter sa clientèle. Nous sommes
-                là pour cela.
-              </p>
+              <p className="">{t("feature1Description")}</p>
             </div>
 
             <div className="space-y-3">
@@ -44,14 +45,10 @@ export default function Section({ Section1Data }) {
               </span>
 
               <h3 className="text-xl font-semibold text-gray-700  ">
-                Des designs percutants et efficaces
+                {t("feature2Title")}
               </h3>
 
-              <p className="text-gray-500 ">
-                La rapidité c&apos;est une chose,mais quand il s&apos;agit de
-                construire une relation de confiance avec vos visiteurs, le
-                visuel est très important.
-              </p>
+              <p className="text-gray-500 ">{t("feature2Description")}</p>
             </div>
 
             <div className="space-y-3">
@@ -60,13 +57,10 @@ export default function Section({ Section1Data }) {
               </span>
 
               <h3 className="text-xl font-semibold text-gray-700  ">
-                Soyez en avance sur vos concurrents
+                {t("feature3Title")}
               </h3>
 
-              <p className="text-gray-500 ">
-                Plus vite vous serez sur pieds et pus vite vous mettrez à terre
-                vos concurrents !
-              </p>
+              <p className="text-gray-500 ">{t("feature3Description")}</p>
             </div>
 
             <div className="space-y-3">
@@ -75,15 +69,10 @@ export default function Section({ Section1Data }) {
               </span>
 
               <h3 className="text-xl font-semibold text-gray-700  e">
-                Tarifs très abordables
+                {t("feature4Title")}
               </h3>
 
-              <p className="text-gray-500 ">
-                Notre savoir-faire est un savant melange de capacité à délivrer
-                tant de la qualité que de la quantité. Nos années
-                d&apos;expérience nous ont permis de mettre à l&apos;epreuve
-                cette recette.
-              </p>
+              <p className="text-gray-500 ">{t("feature4Description")}</p>
             </div>
             <Link
               href={Section1Data.CTA.link}

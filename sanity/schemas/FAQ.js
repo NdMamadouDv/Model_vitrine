@@ -28,52 +28,52 @@ export default {
     {
       name: 'question1',
       title: 'Question1',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'question2',
       title: 'Question2',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'question3',
       title: 'Question3',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'question4',
       title: 'Question4',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'question5',
       title: 'Question5',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'reponse1',
       title: 'Reponse1',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'reponse2',
       title: 'Reponse2',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'reponse3',
       title: 'Reponse3',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'reponse4',
       title: 'Reponse4',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'reponse5',
       title: 'Reponse5',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'CTA',

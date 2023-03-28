@@ -36,7 +36,7 @@ export const getSocials = `*[_type == "social"][]{
   ...,
 
 }`;
-export const getFAQ = `*[_type == "faq"][]{
+export const getFAQ = `*[_type == "faq"][0]{
   ...,
 
 }`;

@@ -21,6 +21,8 @@
     "next": "13.2.4",
     "next-sanity": "^4.1.5",
     "next-sanity-client": "^1.0.6",
+    "next-translate": "^2.0.4",
+    "next-translate-plugin": "^2.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",

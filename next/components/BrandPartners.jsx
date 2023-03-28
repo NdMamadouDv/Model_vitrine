@@ -1,9 +1,12 @@
+import { getBrandsData } from "@/lib/fetchBrands";
 import { urlFor } from "@/utils/sanityClient";
 import Image from "next/image";
 import React from "react";
 
-export default function BrandPartners({ BrandData }) {
+export default async function BrandPartners() {
+  const BrandData = await getBrandsData();
   // console.log(BrandData);
+
   return (
     <section>
       <div className=" items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl">

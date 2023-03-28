@@ -5,6 +5,7 @@ import { SocialIcon } from "react-social-icons";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import { getSocialsData } from "@/lib/fetchSocials";
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string().required("Champs requis !"),
@@ -36,7 +37,7 @@ export default function Contact({ SocialData }) {
     >
       <div className="container flex flex-col min-h-screen px-6 py-12 mx-auto">
         <h2 className="h2 text-center text-white">Contact</h2>
-        <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
+        <div className="flex-1 lg:flex lg:items-center  layout">
           <div className="text-white lg:w-1/2 lg:mx-6">
             <p className="max-w-xl mt-6 text-white text-lg lg:text-xl font-semibold">
               N&apos;hésitez pas à nous envoyer un message{" "}

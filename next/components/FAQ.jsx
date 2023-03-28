@@ -2,12 +2,22 @@
 import React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
+import useTranslation from "next-translate/useTranslation";
+// import { useParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function FAQ({ FAQs }) {
-  //   console.log(FAQs);
+  const params = useSearchParams();
+  const pathname = usePathname();
+  console.log(pathname);
+  console.log(params.has("locale"));
+  console.log("params", params.get("lang"));
+  const { t, lang } = useTranslation("home");
+
+  console.log(FAQs.question1.en);
   return (
     <div className="flex flex-col items-center justify-center space-y-20 py-10">
-      <h2 className="h2 capitalize">Foire aux questions</h2>
+      <h2 className="h2 capitalize"> {t("FAQH2")} </h2>
       <Accordion.Root
         className="AccordionRoot layout space-y-4"
         type="single"
@@ -16,39 +26,35 @@ export default function FAQ({ FAQs }) {
         <Accordion.Item className="AccordionItem " value="item-1">
           <AccordionTrigger>
             <p className="font-semibold text-sm md:text-lg">
-              {FAQs[0].question1}
+              {/* {pathname == "/en"
+                ? `${FAQs.question1.en}`
+                : `${FAQs.question1.fr}`} */}
             </p>
           </AccordionTrigger>
-          <AccordionContent>{FAQs[0].reponse1}</AccordionContent>
+          <AccordionContent></AccordionContent>
         </Accordion.Item>
         <Accordion.Item className="AccordionItem " value="item-2">
           <AccordionTrigger>
-            <p className="font-semibold text-sm text-center md:text-left md:text-lg">
-              {FAQs[0].question2}
-            </p>
+            <p className="font-semibold text-sm text-center md:text-left md:text-lg"></p>
           </AccordionTrigger>
-          <AccordionContent>{FAQs[0].reponse2}</AccordionContent>
+          <AccordionContent></AccordionContent>
         </Accordion.Item>
         <Accordion.Item className="AccordionItem " value="item-3">
           <AccordionTrigger>
-            <p className="font-semibold text-sm text-center md:text-left md:text-lg">
-              {FAQs[0].question3}
-            </p>
+            <p className="font-semibold text-sm text-center md:text-left md:text-lg"></p>
           </AccordionTrigger>
-          <AccordionContent>{FAQs[0].reponse3}</AccordionContent>
+          <AccordionContent>{FAQs.reponse3}</AccordionContent>
         </Accordion.Item>
         <Accordion.Item className="AccordionItem " value="item-4">
           <AccordionTrigger>
-            <p className="font-semibold text-sm text-center md:text-left md:text-lg">
-              {FAQs[0].question4}
-            </p>
+            <p className="font-semibold text-sm text-center md:text-left md:text-lg"></p>
           </AccordionTrigger>
-          <AccordionContent>{FAQs[0].reponse4}</AccordionContent>
+          <AccordionContent></AccordionContent>
         </Accordion.Item>
       </Accordion.Root>
       <div className="flex flex-col items-center justify-center">
-        <h3 className="h3">D&apos;autre question ?</h3>
-        <p className="">Veuillez discuter avec notre équipe.</p>
+        <h3 className="h3">{t("FAQH3")}</h3>
+        <p className="">{t("FAQDiscuss")}</p>
       </div>
     </div>
   );
