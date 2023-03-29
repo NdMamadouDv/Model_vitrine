@@ -45,7 +45,6 @@ module.exports = {
       //   },
       // },
       "corporate",
-      "dark",
     ],
     styled: true,
     base: true,
@@ -53,6 +52,6 @@ module.exports = {
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "dark",
+    darkTheme: false,
   },
 };

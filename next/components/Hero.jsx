@@ -11,7 +11,7 @@ export default async function Hero() {
   // console.log(HeroData);
 
   return (
-    <section className="layout pt-20">
+    <section className="layout sm:pt-20 pt-10">
       <div className="relative items-center w-full  mx-auto md:px-12 ">
         <div className="relative flex-col items-start m-auto align-middle">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
@@ -25,7 +25,7 @@ export default async function Hero() {
                     {t("heroDescription")}
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
+                <div className="hidden sm:flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
                   <Link
                     href={HeroData.CTA.link}
                     className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-primary border-2 border-primary rounded-full nline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none lg:w-auto focus-visible:outline-primary text-sm focus-visible:ring-primary"
@@ -46,20 +46,20 @@ export default async function Hero() {
                 </div>
               </div>
             </div>
-            <div className="order-first block w-full mt-12 aspect-square lg:mt-0 ">
+            <div className="order-first block w-full sm:mt-12 mt-4 aspect-square lg:mt-0 ">
               <Image
                 src={urlFor(HeroData.heroImage)?.url()}
                 width={800}
                 height={800}
                 priority={true}
                 alt={HeroData.heroImageAlt}
-                className=" rounded-tr-[9rem] rounded-bl-[9rem] h-auto w-auto"
+                className=" rounded-tr-[8rem] rounded-bl-[8rem] h-auto w-auto"
               />
             </div>
           </div>
         </div>
         <div>
-          <div className="py-6 mx-auto lg:max-w-7xl">
+          <div className="hidden sm:block py-6 mx-auto lg:max-w-7xl">
             <div className="grid grid-cols-1 gap-6 space-y-0 text-center lg:gap-24 lg:grid-cols-3 lg:text-left items-stretch justify-items-stretch">
               <div>
                 <div>
@@ -93,7 +93,7 @@ export default async function Hero() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center mt-4">
+          <div className="flex flex-col items-center justify-center mt-10 space-y-6">
             <p className="h2 text-center">{t("heroContact")}</p>
             <Link
               href="#contact"

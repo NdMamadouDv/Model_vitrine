@@ -25,8 +25,10 @@
     "feature-2-2Description":"Nos technologies sont sécurisées. En effet, nous utilisons les bonnes pratiques du W3C, permettant de limiter les attaques telles que les injections SQL, les attaques cross-site scripting XSS, et autre type d'attaque. Nous prenons ce sujet très au sérieux.",
     "feature-2-3Title":"Site web extrêmement rapide.",
     "feature-2-3Description":"Nous savons qu'un site lent fait fuir les visiteurs, à vrai dire, nous sommes tous pareil sur ce point. Et c'est pour cette raison que nous avons choisi spécifiquement des technologies nous permettant d'accélérer le temps de chargement.",
-    "FAQH2":"Foire aux question",
+    "FAQH2":"Foire aux questions",
     "FAQH3":"D'autre question ?",
-    "FAQDiscuss":"Veuillez discuter avec notre équipe."
+    "FAQDiscuss":"Veuillez discuter avec notre équipe.",
+    "Socials":"Réseaux sociaux",
+    "BrandTitle":"À LA POINTE DES DERNIÈRES TECHNOLOGIES DU WEB."
 
 }

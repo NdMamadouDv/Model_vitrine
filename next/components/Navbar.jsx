@@ -4,11 +4,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import useToggle from "@/hook/useToggle";
 import { MdOutlineClose } from "react-icons/md";
 import Link from "next/link";
-import { FaFacebookF } from "react-icons/fa";
-import { ImTwitter } from "react-icons/im";
-import { useEffect } from "react";
-function Navbar() {
+import { SocialIcon } from "react-social-icons";
+import useTranslation from "next-translate/useTranslation";
+
+function Navbar({ SocialData }) {
   const [toggle, setToggle] = useToggle(false);
+  const { t, lang } = useTranslation("home");
 
   // console.log(toggle);
 
@@ -36,23 +37,18 @@ function Navbar() {
                 Services
               </Link>
             </li>
-            <li>
-              <Link href="#contact" className="">
-                Contact
-              </Link>
-            </li>
-            {/* <li>
-              <a className="btn btn-primary rounded-md">Contact us</a>
-            </li> */}
           </ul>
         </div>
-        <div className="navbar-end space-x-2">
-          <Link href="#contact" className="btn btn-primary btn-sm rounded-md">
+        <div className=" navbar-end space-x-4">
+          <Link
+            href="#contact"
+            className="md:flex hidden btn btn-primary btn-sm rounded-md"
+          >
             Contact
           </Link>
           {/* Open nav */}
           <div className="lg:hidden flex items-center justify-center ">
-            <span className="btn btn-ghost rounded-md">
+            <span className="rounded-md">
               <GiHamburgerMenu
                 className="h-auto w-10 hover:cursor-pointer "
                 onClick={setToggle}
@@ -66,38 +62,47 @@ function Navbar() {
             id="nav-mobile"
           >
             <div className="flex flex-col items-center justify-center w-full h-full ">
-              <h1 className=" absolute top-4 left-8 text-primary">My brand</h1>
-              <button
-                onClick={setToggle}
-                className="text-white absolute top-4 right-4"
-              >
-                <span className="">
-                  <MdOutlineClose className="h-auto w-10 " />
-                </span>
-              </button>
+              <div className="absolute top-4 left-8  flex justify-between items-center w-5/6 mx-auto">
+                <h1 className="  text-white font-semibold font-Exo text-4xl">
+                  My brand
+                </h1>
+                <button onClick={setToggle} className="text-white ">
+                  <span className="">
+                    <MdOutlineClose className="h-auto w-10 " />
+                  </span>
+                </button>
+              </div>
+
               <ul className="space-y-6">
                 <li className="text-white text-center hover:cursor-pointer hover:underline hover:text-primary">
-                  <Link href="/">Home</Link>
+                  <Link href="#hero" className="text-xl font-semibold">
+                    Home
+                  </Link>
                 </li>
                 <li className="text-white text-center hover:cursor-pointer hover:underline hover:text-primary">
-                  <Link href="/">Gallery</Link>
-                </li>
-                <li className="text-white text-center hover:cursor-pointer hover:underline hover:text-primary">
-                  <Link href="/">About us</Link>
+                  <Link href="#services" className="text-xl font-semibold">
+                    Services
+                  </Link>
                 </li>
               </ul>
-              <div className="absolute top-[95vh] left-8 flex justify-between w-12">
-                {/* {socials.map((social) => (
-                  <SocialIcon
-                    url={social.url}
-                    key={social._id}
-                    fgColor="black"
-                    bgColor="transparent "
-                    className="w-4 sm:w-7 h-auto socialHeader hover:cursor-pointer"
-                  />
-                ))} */}
-                <FaFacebookF className="text-white h-auto w-5 hover:text-primary" />
-                <ImTwitter className="text-white h-auto w-5 hover:text-primary" />
+
+              <div className="absolute bottom-0 left-8 flex justify-between w-2/3 items-center ">
+                <div className="flex flex-col item-center justify-center">
+                  <p className="font-medium font-Exo text-white text-xl text-center">
+                    {t("Socials")}
+                  </p>
+                  <div className="flex justify-start items-center">
+                    {SocialData.map((social) => (
+                      <SocialIcon
+                        url={social.url}
+                        key={social._id}
+                        fgColor="white"
+                        bgColor="transparent "
+                        className="w-8 h-8 socialHeader hover:cursor-pointer"
+                      />
+                    ))}{" "}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

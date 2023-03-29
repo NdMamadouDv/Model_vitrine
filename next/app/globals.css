@@ -177,7 +177,7 @@
   }
 
   .h3 {
-    @apply font-Fjalla  sm:text-xl  lg:text-2xl tracking-[2px];
+    @apply font-Fjalla  text-xl  lg:text-2xl tracking-[2px];
   }
 
   .h4 {

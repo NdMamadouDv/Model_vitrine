@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center w-full">
-      <Navbar />
+      <Navbar SocialData={SocialData} />
       <div className="flex flex-col  space-y-12 md:space-y-8 w-full">
         <Hero id="hero" />
         <BrandPartners />
