@@ -7,10 +7,13 @@ import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 function Navbar({ SocialData }) {
   const [toggle, setToggle] = useToggle(false);
   const { t, lang } = useTranslation("home");
+  const params = useSearchParams();
+  const locale = params.get("lang");
 
   return (
     <div className=" w-full sticky top-0 z-20 bg-white drop-shadow-md	">
@@ -45,6 +48,35 @@ function Navbar({ SocialData }) {
           >
             Contact
           </Link>
+
+          <div className="md:flex hidden items-center justify-center">
+            {locale === "en" ? (
+              <button className="btn btn-ghost btn-xs">
+                <Link className="" href="/">
+                  <Image
+                    src="https://freesvg.org/img/frenchflagframed.png"
+                    width={300}
+                    height={300}
+                    alt="France flag"
+                    className="w-5 h-5"
+                  />
+                </Link>
+              </button>
+            ) : (
+              <button className="btn btn-ghost btn-xs">
+                <Link className="" href="/?lang=en" as="/en?lang=en">
+                  <Image
+                    src="https://freesvg.org/img/US-UK_Flag.png"
+                    width={300}
+                    height={300}
+                    alt="English flag"
+                    className="w-5 h-5 "
+                  />
+                </Link>
+              </button>
+            )}
+          </div>
+
           {/* Open nav */}
           <div className="lg:hidden flex items-center justify-center ">
             <span className="rounded-md">
