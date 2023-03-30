@@ -8,7 +8,6 @@ export default async function BrandPartners() {
   const { t, lang } = useTranslation("home");
 
   const BrandData = await getBrandsData();
-  // console.log(BrandData);
 
   return (
     <section>

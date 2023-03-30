@@ -8,7 +8,6 @@ import { getHeroData } from "@/lib/fetchHero";
 export default async function Hero() {
   const { t, lang } = useTranslation("home");
   const HeroData = await getHeroData();
-  // console.log(HeroData);
 
   return (
     <section className="layout sm:pt-20 pt-10">

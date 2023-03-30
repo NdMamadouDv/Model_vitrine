@@ -5,7 +5,6 @@ import { SocialIcon } from "react-social-icons";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
-import { getSocialsData } from "@/lib/fetchSocials";
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string().required("Champs requis !"),
@@ -20,7 +19,6 @@ const ContactSchema = Yup.object().shape({
 });
 
 export default function Contact({ SocialData }) {
-  // console.log(SocialData);
   const [formValue, setFormValue] = useState({});
   const serviceID = process.env.NEXT_PUBLIC_SERVICEID;
   const templateID = process.env.NEXT_PUBLIC_TEMPLATEID;

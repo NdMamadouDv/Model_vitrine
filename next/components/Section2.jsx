@@ -8,7 +8,6 @@ export default async function Section2() {
   const Section2Data = await getSection2Data();
   const { t, lang } = useTranslation("home");
 
-  // console.log(Section2Data);
   return (
     <section className=" layout">
       <div className="py-16 space-y-6 ">

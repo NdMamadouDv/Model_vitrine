@@ -3,10 +3,7 @@ import React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
 import useTranslation from "next-translate/useTranslation";
-// import { useParams } from "next/navigation";
-import { usePathname, useSearchParams } from "next/navigation";
-import { use } from "react";
-import { getFAQData } from "@/lib/fetchFAQ";
+import { useSearchParams } from "next/navigation";
 
 // async function getData() {
 //   const res = await getFAQData();
@@ -19,12 +16,11 @@ import { getFAQData } from "@/lib/fetchFAQ";
 
 export default function FAQ({ FAQs }) {
   // const FAQs = use(dataPromise);
-  // console.log(FAQs);
+
   const params = useSearchParams();
   const locale = params.get("lang");
   const { t, lang } = useTranslation("home");
 
-  // console.log(FAQs.question1.en);
   return (
     <div className="layout flex flex-col items-center justify-center space-y-20 py-10">
       <h2 className="h2 capitalize"> {t("FAQH2")} </h2>

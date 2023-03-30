@@ -13,7 +13,6 @@ export default async function Section() {
   const Section1Data = await getSection1Data();
   const { t, lang } = useTranslation("home");
 
-  // console.log(Section1Data);
   return (
     <section className="layout ">
       <div className="container  py-10 mx-auto ">

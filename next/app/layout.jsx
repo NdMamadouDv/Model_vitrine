@@ -29,8 +29,11 @@ const mitr = Mitr({
 
 // fetch page ici pour les metadonnée
 export const metadata = {
-  title: "Heyvoila.com | Votre site en une journée",
-  description: "Made by HeyVoila.com",
+  title: "Indev-conception.fr | Votre site en une journée",
+  description: "Made by Indev",
+  icons: {
+    icon: "/indev_orange.png",
+  },
 };
 
 export default async function RootLayout({ children }) {

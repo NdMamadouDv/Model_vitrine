@@ -7,13 +7,10 @@ import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
-import france from "../public/fr.svg";
 
 function Navbar({ SocialData }) {
   const [toggle, setToggle] = useToggle(false);
   const { t, lang } = useTranslation("home");
-
-  // console.log(toggle);
 
   return (
     <div className=" w-full sticky top-0 z-20 bg-white drop-shadow-md	">
