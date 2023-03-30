@@ -6,6 +6,8 @@ import { MdOutlineClose } from "react-icons/md";
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import useTranslation from "next-translate/useTranslation";
+import Image from "next/image";
+import france from "../public/fr.svg";
 
 function Navbar({ SocialData }) {
   const [toggle, setToggle] = useToggle(false);
@@ -28,7 +30,7 @@ function Navbar({ SocialData }) {
           <ul className="menu menu-horizontal   space-x-4">
             <li>
               <Link href="#" className="">
-                Home
+                {t("navAccueil")}
               </Link>
             </li>
 
@@ -63,7 +65,7 @@ function Navbar({ SocialData }) {
           >
             <div className="flex flex-col items-center justify-center w-full h-full ">
               <div className="absolute top-4 left-8  flex justify-between items-center w-5/6 mx-auto">
-                <h1 className="  text-white font-semibold font-Exo text-4xl">
+                <h1 className="  text-white font-semibold font-Exo text-3xl">
                   My brand
                 </h1>
                 <button onClick={setToggle} className="text-white ">
@@ -76,7 +78,7 @@ function Navbar({ SocialData }) {
               <ul className="space-y-6">
                 <li className="text-white text-center hover:cursor-pointer hover:underline hover:text-primary">
                   <Link href="#hero" className="text-xl font-semibold">
-                    Home
+                    {t("navAccueil")}
                   </Link>
                 </li>
                 <li className="text-white text-center hover:cursor-pointer hover:underline hover:text-primary">
@@ -86,21 +88,41 @@ function Navbar({ SocialData }) {
                 </li>
               </ul>
 
-              <div className="absolute bottom-0 left-8 flex justify-between w-2/3 items-center ">
-                <div className="flex flex-col item-center justify-center">
-                  <p className="font-medium font-Exo text-white text-xl text-center">
+              <div className="absolute bottom-2 left-4 flex justify-between w-5/6 items-center ">
+                <div className="flex flex-col item-center justify-between w-full">
+                  <p className="font-medium font-Exo text-white  text-center">
                     {t("Socials")}
                   </p>
-                  <div className="flex justify-start items-center">
+                  <div className="flex justify-between items-center w-full">
                     {SocialData.map((social) => (
                       <SocialIcon
                         url={social.url}
                         key={social._id}
                         fgColor="white"
                         bgColor="transparent "
-                        className="w-8 h-8 socialHeader hover:cursor-pointer"
+                        className="w-4 h-4 socialHeader hover:cursor-pointer"
                       />
                     ))}{" "}
+                    <div className="flex items-center justify-center space-x-4">
+                      <Link className="" href="/?lang=en" as="/en?lang=en">
+                        <Image
+                          src="https://freesvg.org/img/US-UK_Flag.png"
+                          width={300}
+                          height={300}
+                          alt="English flag"
+                          className="w-5 h-5 "
+                        />
+                      </Link>
+                      <Link className="" href="/">
+                        <Image
+                          src="https://freesvg.org/img/frenchflagframed.png"
+                          width={300}
+                          height={300}
+                          alt="France flag"
+                          className="w-5 h-5"
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

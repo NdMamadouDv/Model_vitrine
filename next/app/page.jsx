@@ -8,7 +8,8 @@ import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import { getSocialsData } from "@/lib/fetchSocials";
 import { getFAQData } from "@/lib/fetchFAQ";
-
+import Image from "next/image";
+import france from "../public/france.svg";
 export default async function Home() {
   const SocialData = await getSocialsData();
   const FAQs = await getFAQData();
@@ -18,12 +19,15 @@ export default async function Home() {
       <Navbar SocialData={SocialData} />
       <div className="flex flex-col  space-y-12 md:space-y-8 w-full">
         <Hero id="hero" />
+
         <BrandPartners />
         <Section1 id="services" />
+
         <Section2 id="features" />
         <FAQ FAQs={FAQs} />
         <Contact SocialData={SocialData} id="contact" />
       </div>
+
       <Footer />
     </div>
   );

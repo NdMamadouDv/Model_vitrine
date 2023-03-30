@@ -105,7 +105,7 @@ export default function Contact({ SocialData }) {
               >
                 {({ errors, touched }) => (
                   <Form>
-                    <div className="flex-1 grid grid-cols-2 space-x-4">
+                    <div className="grid sm:grid-cols-2 sm:space-x-4  w-full space-y-4 sm:space-y-0 ">
                       <label className="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm ">
                         <Field
                           name="firstName"

@@ -14,8 +14,8 @@ export default async function Hero() {
     <section className="layout sm:pt-20 pt-10">
       <div className="relative items-center w-full  mx-auto md:px-12 ">
         <div className="relative flex-col items-start m-auto align-middle">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
-            <div className="relative items-center gap-12 m-auto lg:inline-flex md:order-first">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-12">
+            <div className="relative items-center gap-12 m-auto lg:inline-flex md:order-first -mt-12 md:mt-0">
               <div className="max-w-xl text-center lg:text-left">
                 <div>
                   <h1 className="text-2xl font-semibold tracking-tight text-black sm:text-4xl">
@@ -25,7 +25,7 @@ export default async function Hero() {
                     {t("heroDescription")}
                   </p>
                 </div>
-                <div className="hidden sm:flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
+                <div className="hidden md:flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
                   <Link
                     href={HeroData.CTA.link}
                     className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-primary border-2 border-primary rounded-full nline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none lg:w-auto focus-visible:outline-primary text-sm focus-visible:ring-primary"
@@ -59,7 +59,7 @@ export default async function Hero() {
           </div>
         </div>
         <div>
-          <div className="hidden sm:block py-6 mx-auto lg:max-w-7xl">
+          <div className="hidden md:block py-6 mx-auto lg:max-w-7xl -mt-28 ">
             <div className="grid grid-cols-1 gap-6 space-y-0 text-center lg:gap-24 lg:grid-cols-3 lg:text-left items-stretch justify-items-stretch">
               <div>
                 <div>

@@ -5,18 +5,28 @@ import { IoChevronDownCircleOutline } from "react-icons/io5";
 import useTranslation from "next-translate/useTranslation";
 // import { useParams } from "next/navigation";
 import { usePathname, useSearchParams } from "next/navigation";
+import { use } from "react";
+import { getFAQData } from "@/lib/fetchFAQ";
+
+// async function getData() {
+//   const res = await getFAQData();
+//   // The return value is *not* serialized
+//   // You can return Date, Map, Set, etc.
+//   console.log("fetching");
+//   return res;
+// }
+// const dataPromise = getData();
 
 export default function FAQ({ FAQs }) {
+  // const FAQs = use(dataPromise);
+  // console.log(FAQs);
   const params = useSearchParams();
-  const pathname = usePathname();
-  console.log(pathname);
-  console.log(params.has("locale"));
-  console.log("params", params.get("lang"));
+  const locale = params.get("lang");
   const { t, lang } = useTranslation("home");
 
-  console.log(FAQs.question1.en);
+  // console.log(FAQs.question1.en);
   return (
-    <div className="flex flex-col items-center justify-center space-y-20 py-10">
+    <div className="layout flex flex-col items-center justify-center space-y-20 py-10">
       <h2 className="h2 capitalize"> {t("FAQH2")} </h2>
       <Accordion.Root
         className="AccordionRoot layout space-y-4"
@@ -25,31 +35,52 @@ export default function FAQ({ FAQs }) {
       >
         <Accordion.Item className="AccordionItem " value="item-1">
           <AccordionTrigger>
-            <p className="font-semibold text-sm md:text-lg">
-              {/* {pathname == "/en"
+            <span className="font-semibold text-sm md:text-lg text-left">
+              {locale === "en"
                 ? `${FAQs.question1.en}`
-                : `${FAQs.question1.fr}`} */}
-            </p>
+                : `${FAQs.question1.fr}`}
+            </span>
           </AccordionTrigger>
-          <AccordionContent></AccordionContent>
+          <AccordionContent>
+            {locale === "en" ? `${FAQs.reponse1.en}` : `${FAQs.reponse1.fr}`}
+          </AccordionContent>
         </Accordion.Item>
         <Accordion.Item className="AccordionItem " value="item-2">
           <AccordionTrigger>
-            <p className="font-semibold text-sm text-center md:text-left md:text-lg"></p>
+            <span className="font-semibold text-sm md:text-lg text-left">
+              {locale === "en"
+                ? `${FAQs.question2.en}`
+                : `${FAQs.question2.fr}`}
+            </span>
           </AccordionTrigger>
-          <AccordionContent></AccordionContent>
+          <AccordionContent>
+            {locale === "en" ? `${FAQs.reponse2.en}` : `${FAQs.reponse2.fr}`}
+          </AccordionContent>
         </Accordion.Item>
         <Accordion.Item className="AccordionItem " value="item-3">
           <AccordionTrigger>
-            <p className="font-semibold text-sm text-center md:text-left md:text-lg"></p>
+            <span className="font-semibold text-sm md:text-lg text-left">
+              {locale === "en"
+                ? `${FAQs.question3.en}`
+                : `${FAQs.question3.fr}`}
+            </span>
           </AccordionTrigger>
-          <AccordionContent>{FAQs.reponse3}</AccordionContent>
+          <AccordionContent>
+            {" "}
+            {locale === "en" ? `${FAQs.reponse3.en}` : `${FAQs.reponse3.fr}`}
+          </AccordionContent>
         </Accordion.Item>
         <Accordion.Item className="AccordionItem " value="item-4">
           <AccordionTrigger>
-            <p className="font-semibold text-sm text-center md:text-left md:text-lg"></p>
+            <span className="font-semibold text-sm md:text-lg text-left">
+              {locale === "en"
+                ? `${FAQs.question4.en}`
+                : `${FAQs.question4.fr}`}
+            </span>
           </AccordionTrigger>
-          <AccordionContent></AccordionContent>
+          <AccordionContent>
+            {locale === "en" ? `${FAQs.reponse4.en}` : `${FAQs.reponse4.fr}`}
+          </AccordionContent>
         </Accordion.Item>
       </Accordion.Root>
       <div className="flex flex-col items-center justify-center">
@@ -68,7 +99,10 @@ const AccordionTrigger = React.forwardRef(
         ref={forwardedRef}
       >
         {children}
-        <IoChevronDownCircleOutline className="AccordionChevron" aria-hidden />
+        <IoChevronDownCircleOutline
+          className="AccordionChevron chevron"
+          aria-hidden
+        />
       </Accordion.Trigger>
     </Accordion.Header>
   )

@@ -4,7 +4,7 @@ const nextTranslate = require("next-translate-plugin");
 
 const nextConfig = {
   images: {
-    domains: ["cdn.sanity.io"],
+    domains: ["cdn.sanity.io", "freesvg.org"],
   },
   experimental: {
     appDir: true,
