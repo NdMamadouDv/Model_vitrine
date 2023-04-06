@@ -38,8 +38,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Blank', value: 'Blank'},
-          {title: 'Self', value: 'Self'},
+          {title: 'Blank', value: '_blank'},
+          {title: 'Self', value: '_self'},
         ],
         layout: 'radio',
       },

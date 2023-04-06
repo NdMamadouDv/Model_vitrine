@@ -5,6 +5,7 @@ import { SocialIcon } from "react-social-icons";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import useTranslation from "next-translate/useTranslation";
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string().required("Champs requis !"),
@@ -23,7 +24,7 @@ export default function Contact({ SocialData }) {
   const serviceID = process.env.NEXT_PUBLIC_SERVICEID;
   const templateID = process.env.NEXT_PUBLIC_TEMPLATEID;
   const publicKey = process.env.NEXT_PUBLIC_MAIL_PUBLIC_KEY;
-
+  const { t, lang } = useTranslation("home");
   const handleSubmit = (formValue) => {
     console.log(formValue);
     emailjs.send(serviceID, templateID, formValue, publicKey);
@@ -38,14 +39,14 @@ export default function Contact({ SocialData }) {
         <div className="flex-1 lg:flex lg:items-center  layout">
           <div className="text-white lg:w-1/2 lg:mx-6">
             <p className="max-w-xl mt-6 text-white text-lg lg:text-xl font-semibold">
-              N&apos;hésitez pas à nous envoyer un message{" "}
+              {t("ContactTitle")}
             </p>
 
             <div className="mt-6 space-y-8 md:mt-8 text-white">
               <p className="flex items-center justify-center md:justify-start">
                 <IoLocationSharp className="text-white" />
                 <span className="mx-2 text-white truncate ">
-                  Under the bright sun 🌞
+                  {t("ContactPosition")} 🌞
                 </span>
               </p>
 
@@ -65,7 +66,10 @@ export default function Contact({ SocialData }) {
             </div>
 
             <div className="mt-6 md:mt-8">
-              <h3 className="text-gray-300 h3 text-center ">Suivez nous </h3>
+              <h3 className="text-gray-300 h3 text-center ">
+                {" "}
+                {t("ContactFollow")}{" "}
+              </h3>
 
               <div className="flex mt-4 -mx-1.5 items-center justify-center ">
                 {SocialData.map((social) => (
@@ -84,7 +88,7 @@ export default function Contact({ SocialData }) {
           <div className="mt-8 lg:w-1/2 lg:mx-6">
             <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl :bg-gray-900 lg:max-w-xl">
               <h3 className="h3 text-center text-gray-700 mb-6">
-                Formulaire de contact
+                {t("Formtitle")}
               </h3>
 
               <Formik
@@ -111,7 +115,7 @@ export default function Contact({ SocialData }) {
                           className="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                         />
                         <span className="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
-                          Prenom
+                          {t("FormName")}
                         </span>
                         {errors.firstName && touched.firstName ? (
                           <div className="text-xs text-red-600">
@@ -127,7 +131,7 @@ export default function Contact({ SocialData }) {
                         />
 
                         <span className="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
-                          Nom
+                          {t("FormSirName")}
                         </span>
                         {errors.lastName && touched.lastName ? (
                           <div className="text-xs text-red-600">
@@ -179,7 +183,7 @@ export default function Contact({ SocialData }) {
                       type="submit"
                       className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                     >
-                      Tenez nous au courant
+                      {t("FormSubmit")}{" "}
                     </button>
                   </Form>
                 )}

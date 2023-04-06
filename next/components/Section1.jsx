@@ -74,6 +74,7 @@ export default async function Section() {
               <p className="text-gray-500 ">{t("feature4Description")}</p>
             </div>
             <Link
+              target="_blank"
               href={Section1Data.CTA.link}
               className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-primary border-2 border-primary rounded-full nline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none lg:w-auto focus-visible:outline-primary text-sm focus-visible:ring-primary"
             >

@@ -21,7 +21,7 @@ function Navbar({ SocialData }) {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn btn-ghost normal-case text-xl text-primary"
+            className="btn btn-ghost normal-case text-xl text-primary hover:bg-transparent"
           >
             My brand
           </Link>
@@ -29,13 +29,13 @@ function Navbar({ SocialData }) {
         <div className="navbar-center hidden lg:flex text-white">
           <ul className="menu menu-horizontal   space-x-4">
             <li>
-              <Link href="#" className="">
+              <Link href="#" className="hover:bg-transparent">
                 {t("navAccueil")}
               </Link>
             </li>
 
             <li>
-              <Link href="#services" className="">
+              <Link href="#services" className="hover:bg-transparent">
                 Services
               </Link>
             </li>
@@ -43,7 +43,8 @@ function Navbar({ SocialData }) {
         </div>
         <div className=" navbar-end space-x-4">
           <Link
-            href="#contact"
+            target="_blank"
+            href="https://heyvoila.com/#contact"
             className="md:flex hidden btn btn-primary btn-sm rounded-md"
           >
             Contact

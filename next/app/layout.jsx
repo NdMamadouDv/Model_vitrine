@@ -29,7 +29,7 @@ const mitr = Mitr({
 
 // fetch page ici pour les metadonnée
 export const metadata = {
-  title: "Indev-conception.fr | Votre site en une journée",
+  title: "Votre site | Your website",
   description: "Made by Indev",
   icons: {
     icon: "/indev_orange.png",
@@ -37,8 +37,6 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  // const PageData = await getPageData();
-
   return (
     <html
       lang="en"
@@ -47,9 +45,11 @@ export default async function RootLayout({ children }) {
     ${fjalla.variable} `}
       data-theme="corporate"
     >
+      {/* provider */}
       <body className="flex flex-col items-center justify-center">
         {children}
       </body>
+      {/* provider */}
     </html>
   );
 }
