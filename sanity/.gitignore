@@ -24,3 +24,6 @@ git rm --cached next# See https://help.github.com/articles/ignoring-files/ for m
 
 # Typescript
 *.tsbuildinfo
+.env
+.env.local
+sanity.config.js
